@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PCU Campus Event Hub | PCET's Pimpri Chinchwad University, Pune</title>
+<meta name="description" content="Browse and register for tech, cultural, sports, academic, global and career events on the PCU campus. Learn | Grow | Achieve." />
+<style>
+/* ============================================================
+   PCU CAMPUS EVENT HUB — styles
+   Theme: deep navy (#0B1F4B) + crimson (#B3123A) on warm white
+   ============================================================ */
+:root{
+  --navy:#0B1F4B;
+  --navy-2:#153069;
+  --crimson:#B3123A;
+  --crimson-dark:#8d0e2e;
+  --bg:#FDFBF7;
+  --alt:#F6F2EA;
+  --surface:#ffffff;
+  --ink:#151528;
+  --muted:#5b6072;
+  --line:#e6e1d7;
+  --ok:#0f7b4f;
+  --err:#c02b1e;
+  --radius:16px;
+  --shadow:0 6px 20px rgba(11,31,75,.08);
+  --shadow-lg:0 18px 40px rgba(11,31,75,.18);
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--font);background:var(--bg);color:var(--ink);
+  line-height:1.55;-webkit-font-smoothing:antialiased;
+}
+[hidden]{display:none !important}
+a{color:var(--crimson)}
+:focus-visible{outline:3px solid var(--crimson);outline-offset:2px;border-radius:6px}
+.container{width:min(1160px,92%);margin:0 auto}
+.container.narrow{width:min(760px,92%)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+section{padding:74px 0;scroll-margin-top:78px}
+.alt{background:var(--alt)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;cursor:pointer;
+  font:inherit;font-weight:700;font-size:15px;border-radius:999px;padding:12px 26px;text-decoration:none;
+  transition:transform .15s ease,box-shadow .15s ease,background .15s ease,color .15s ease;
+}
+.btn-primary{background:var(--crimson);color:#fff}
+.btn-primary:hover{background:var(--crimson-dark);transform:translateY(-2px);box-shadow:0 10px 22px rgba(179,18,58,.35)}
+.btn-light{background:#fff;color:var(--navy)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.25)}
+.btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.btn-ghost{background:#ebe8e1;color:#83879a;cursor:not-allowed;border:1px dashed #cfcbc1}
+.btn-sm{padding:8px 16px;font-size:13px;border-radius:9px}
+.btn-danger-ghost{background:#fff;color:var(--crimson);border:1.5px solid var(--crimson)}
+.btn-danger-ghost:hover{background:var(--crimson);color:#fff}
+
+/* ---------- Header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:60;color:#fff;
+  background:rgba(11,31,75,.97);backdrop-filter:blur(8px);
+  border-bottom:3px solid var(--crimson);
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.logo{
+  position:relative;width:42px;height:50px;flex:none;background:var(--crimson);
+  clip-path:polygon(0 0,100% 0,100% 62%,50% 100%,0 62%);
+  display:grid;place-items:center;
+}
+.logo::before{
+  content:"";position:absolute;inset:3px;background:var(--navy);
+  clip-path:polygon(0 0,100% 0,100% 62%,50% 100%,0 62%);
+}
+.logo span{position:relative;z-index:1;font-size:12.5px;font-weight:800;letter-spacing:.5px;color:#fff;transform:translateY(-3px)}
+.brand-name{display:block;font-weight:800;font-size:16.5px;letter-spacing:.2px;line-height:1.2}
+.brand-sub{display:block;font-size:10.5px;color:#b9c6e6;font-weight:600;letter-spacing:1.6px;text-transform:uppercase}
+.nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav a{
+  color:#dfe6f5;text-decoration:none;padding:8px 14px;border-radius:999px;
+  font-size:14px;font-weight:600;transition:.18s;
+}
+.nav a:hover{background:rgba(255,255,255,.14);color:#fff}
+.nav a.active{background:#fff;color:var(--navy);box-shadow:0 4px 14px rgba(0,0,0,.25)}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;overflow:hidden;color:#fff;padding:82px 0 74px;
+  background:radial-gradient(900px 460px at 88% -10%,#1e459b 0%,transparent 62%),
+             linear-gradient(158deg,#0B1F4B 0%,#0d2557 58%,#122c68 100%);
+}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;
+  background:linear-gradient(90deg,var(--crimson) 0%,#e0355f 45%,#153069 100%);
+}
+.hero-inner{position:relative;z-index:1}
+.hero-copy{max-width:660px}
+.hero-eyebrow{
+  display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
+  color:#ffc9d5;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.07);
+  padding:6px 14px;border-radius:999px;margin-bottom:20px;
+}
+.hero h1{font-size:clamp(2.2rem,5.6vw,4rem);line-height:1.05;margin:0 0 16px;letter-spacing:-1.5px}
+.hero-tagline{
+  display:inline-block;margin:0 0 18px;padding:8px 18px;border-radius:999px;
+  background:var(--crimson);color:#fff;font-weight:800;letter-spacing:2.4px;font-size:14px;text-transform:uppercase;
+}
+.hero-lead{margin:0 0 28px;font-size:clamp(1rem,1.6vw,1.16rem);color:#d3dcf3;max-width:640px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.stats{display:flex;gap:12px;flex-wrap:wrap}
+.stat{
+  display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;
+  background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.26);color:#eef2ff;
+}
+.stat b{color:#fff;font-weight:800}
+.stat::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--crimson);box-shadow:0 0 0 3px rgba(179,18,58,.35)}
+
+/* ---------- Section heads ---------- */
+.section-head{margin-bottom:30px;max-width:760px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.eyebrow{display:block;font-size:12px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;color:var(--crimson);margin-bottom:8px}
+.section-head h2{margin:0 0 10px;font-size:clamp(1.6rem,3.4vw,2.4rem);letter-spacing:-.6px;color:var(--navy)}
+.section-head p{margin:0;color:var(--muted);font-size:16px}
+
+/* ---------- Toolbar: search + chips ---------- */
+.toolbar{display:flex;flex-direction:column;gap:16px;margin-bottom:14px}
+.search input{
+  width:100%;max-width:460px;font:inherit;font-size:15px;padding:13px 18px;border-radius:999px;
+  border:1.5px solid var(--line);background:#fff;color:var(--ink);box-shadow:var(--shadow);
+}
+.search input:focus{outline:none;border-color:var(--crimson);box-shadow:0 0 0 4px rgba(179,18,58,.14)}
+.chips{display:flex;gap:9px;flex-wrap:wrap}
+.chip{
+  font:inherit;font-size:13.5px;font-weight:700;cursor:pointer;padding:8px 17px;border-radius:999px;
+  background:#fff;color:var(--navy);border:1.5px solid var(--line);transition:.16s;
+}
+.chip:hover{border-color:var(--navy);transform:translateY(-1px)}
+.chip.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.result-count{margin:6px 0 22px;font-size:13.5px;color:var(--muted);font-weight:600}
+
+/* ---------- Event cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.card{
+  display:flex;flex-direction:column;gap:0;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);box-shadow:var(--shadow);padding:0;overflow:hidden;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.card:hover{transform:translateY(-7px);box-shadow:var(--shadow-lg);border-color:#d9d3c7}
+.card.is-past{background:#f3f1ec;opacity:.92;filter:grayscale(.85)}
+.card.is-past:hover{transform:none;box-shadow:var(--shadow);border-color:var(--line)}
+.card-body{display:flex;flex-direction:column;gap:13px;padding:18px 20px 20px;flex:1}
+.card h3{margin:0;font-size:20px;line-height:1.25;color:var(--navy);letter-spacing:-.3px}
+.badge{
+  flex:none;font-size:10.5px;font-weight:800;letter-spacing:.9px;text-transform:uppercase;
+  padding:5px 11px;border-radius:999px;white-space:nowrap;
+}
+.cat-Tech{background:#e6edff;color:#1a3fb8}
+.cat-Cultural{background:#ffe9f0;color:#b3123a}
+.cat-Sports{background:#e4f7ec;color:#0f7b4f}
+.cat-Academic{background:#fff3dd;color:#9a5b00}
+.cat-Global{background:#e7f6fb;color:#0b6d8c}
+.cat-Career{background:#f0e9ff;color:#5b2ec9}
+.badge-today{background:var(--crimson);color:#fff;animation:pulse 1.7s infinite}
+.badge-closed{background:#8b8fa3;color:#fff}
+.desc{margin:0;font-size:14.5px;color:#41465a}
+.meta{
+  display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:0;
+  background:#f8f6f1;border:1px solid var(--line);border-radius:12px;padding:13px;
+}
+.card.is-past .meta{background:#eeece6}
+.meta > div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.meta .wide{grid-column:1 / -1}
+.meta dt{font-size:10px;letter-spacing:.9px;text-transform:uppercase;color:var(--muted);font-weight:800}
+.meta dd{margin:0;font-size:14px;font-weight:700;color:var(--navy);overflow-wrap:anywhere}
+.seats{display:flex;flex-direction:column;gap:6px}
+.seats-bar{height:7px;border-radius:999px;background:#e9e6de;overflow:hidden}
+.seats-bar span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--crimson),#e0355f);transition:width .4s ease}
+.seats-bar.full span{background:#8b8fa3}
+.seats-text{font-size:12.5px;font-weight:700;color:var(--muted)}
+.seats-text b{color:var(--navy)}
+.card-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:auto;padding-top:4px}
+.empty-state{
+  grid-column:1/-1;text-align:center;background:#fff;border:1.5px dashed var(--line);
+  border-radius:var(--radius);padding:44px 24px;color:var(--muted);
+}
+.empty-state h3{margin:0 0 8px;color:var(--navy)}
+
+/* ---------- Panels / forms ---------- */
+.panel{
+  background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);
+  padding:28px;
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field.full{grid-column:1 / -1}
+label{font-size:13.5px;font-weight:700;color:var(--navy)}
+.req{color:var(--crimson)}
+input[type=text],input[type=email],input[type=tel],input[type=search],select{
+  font:inherit;font-size:15px;width:100%;padding:11px 13px;border-radius:10px;
+  border:1.5px solid var(--line);background:#fff;color:var(--ink);transition:.15s;
+}
+input:focus,select:focus{outline:none;border-color:var(--crimson);box-shadow:0 0 0 3px rgba(179,18,58,.15)}
+input.invalid,select.invalid{border-color:var(--err);background:#fff6f5}
+.err-msg{margin:0;font-size:12.5px;font-weight:700;color:var(--err);min-height:15px}
+.hint{margin:14px 0 0;font-size:12.8px;color:var(--muted)}
+.form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.form-actions.split{justify-content:space-between}
+
+/* ---------- Confirmation ---------- */
+.confirm{
+  text-align:center;border:2px dashed var(--navy);background:#f2f5ff;border-radius:16px;padding:26px 22px;
+}
+.confirm h3{margin:0 0 6px;color:var(--navy);font-size:24px}
+.confirm .id{
+  display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:27px;font-weight:800;color:var(--crimson);letter-spacing:1.5px;margin:8px 0 4px;
+}
+.confirm dl{
+  display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:18px auto 0;max-width:420px;text-align:left;font-size:14.5px;
+}
+.confirm dt{font-weight:800;color:var(--muted);font-size:12.5px;text-transform:uppercase;letter-spacing:.6px;align-self:center}
+.confirm dd{margin:0;font-weight:700;color:var(--navy)}
+.confirm .form-actions{justify-content:center}
+
+/* ---------- Modal ---------- */
+.modal-overlay{
+  position:fixed;inset:0;z-index:100;background:rgba(8,19,46,.66);backdrop-filter:blur(3px);
+  display:flex;align-items:flex-start;justify-content:center;padding:5vh 16px;overflow-y:auto;animation:fade .18s ease;
+}
+.modal{
+  width:min(660px,100%);background:var(--surface);border-radius:20px;box-shadow:var(--shadow-lg);
+  overflow:hidden;animation:pop .22s cubic-bezier(.2,.9,.3,1.3);
+}
+.modal-head{display:flex;align-items:center;justify-content:space-between;gap:14px;background:linear-gradient(115deg,var(--navy) 0%,#17356f 100%);color:#fff;padding:16px 20px;border-bottom:3px solid var(--crimson)}
+.modal-head h3{margin:0;font-size:17.5px;letter-spacing:-.2px}
+.modal-close{
+  background:rgba(255,255,255,.12);color:#fff;border:none;width:34px;height:34px;border-radius:50%;
+  font-size:21px;line-height:1;cursor:pointer;transition:.15s;flex:none;
+}
+.modal-close:hover{background:var(--crimson)}
+.modal-body{padding:22px}
+.modal-body .panel{padding:0;border:none;box-shadow:none;background:transparent}
+
+/* ---------- Registrations table ---------- */
+.table-wrap{
+  overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow);
+}
+table{width:100%;border-collapse:collapse;min-width:660px}
+th{
+  background:var(--navy);color:#fff;text-align:left;font-size:11.5px;letter-spacing:1px;text-transform:uppercase;
+  padding:13px 15px;font-weight:700;
+}
+td{padding:14px 15px;border-top:1px solid var(--line);font-size:14.5px;vertical-align:middle}
+tbody tr:hover{background:#faf8f4}
+td .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:800;color:var(--crimson);white-space:nowrap}
+td .sub{display:block;font-size:12.5px;color:var(--muted)}
+.count-pill{
+  display:inline-block;background:var(--crimson);color:#fff;font-size:12.5px;font-weight:800;
+  padding:4px 12px;border-radius:999px;margin-left:10px;vertical-align:middle;
+}
+
+/* ---------- About + footer ---------- */
+.about-card{
+  background:#fff;border:1px solid var(--line);border-left:6px solid var(--crimson);border-radius:14px;
+  padding:26px 28px;box-shadow:var(--shadow);max-width:880px;
+}
+.about-card p{margin:0 0 14px;font-size:16.2px;color:#333a52}
+.about-card p:last-child{margin-bottom:0}
+.contact{font-weight:800;color:var(--navy)}
+.site-footer{background:var(--navy);color:#c9d3ea;padding:26px 0;text-align:center;font-size:14px}
+.site-footer strong{color:#fff}
+.site-footer .note{display:block;margin-top:7px;font-size:12.5px;color:#93a3c9}
+
+/* ---------- Toasts ---------- */
+.toasts{position:fixed;right:18px;bottom:18px;z-index:200;display:flex;flex-direction:column;gap:10px;max-width:min(370px,92vw)}
+.toast{
+  background:#0f2554;color:#fff;padding:13px 17px;border-radius:12px;font-size:14.2px;font-weight:600;
+  box-shadow:var(--shadow-lg);border-left:5px solid var(--crimson);animation:slidein .25s ease;overflow-wrap:anywhere;
+}
+.toast.success{border-left-color:#2ecc71}
+.toast.error{border-left-color:#ff6b5e}
+.toast.out{opacity:0;transform:translateX(24px);transition:.35s ease}
+
+/* ============================================================
+   VISUAL POLISH — hero artwork, illustrated card headers,
+   decorative patterns and motion (all CSS/inline SVG, no images)
+   ============================================================ */
+
+::selection{background:var(--crimson);color:#fff}
+.alt{
+  background-image:radial-gradient(rgba(11,31,75,.06) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+.section-head h2::after{
+  content:"";display:block;width:74px;height:5px;border-radius:9px;margin-top:14px;
+  background:linear-gradient(90deg,var(--crimson),#e8557c);
+}
+.section-head.center h2::after{margin-left:auto;margin-right:auto}
+
+/* --- Hero: dotted texture + two-column layout with floating artwork --- */
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.16) 1px,transparent 1px);
+  background-size:26px 26px;
+  -webkit-mask-image:linear-gradient(to bottom,#000 10%,transparent 85%);
+  mask-image:linear-gradient(to bottom,#000 10%,transparent 85%);
+}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center}
+.hero-visual{display:none}
+@media (min-width:1000px){
+  .hero-visual{display:block;position:relative;min-height:380px}
+}
+.hv-blob{position:absolute;border-radius:50%;filter:blur(54px);opacity:.5;pointer-events:none}
+.hv-blob.b1{width:210px;height:210px;background:#e0355f;top:-10px;right:4%}
+.hv-blob.b2{width:250px;height:250px;background:#2f6bff;bottom:-30px;left:-4%}
+.hv-ring{
+  position:absolute;top:50%;left:50%;border-radius:50%;transform:translate(-50%,-50%);
+  border:1.5px dashed rgba(255,255,255,.3);animation:spin 46s linear infinite;pointer-events:none;
+}
+.hv-ring.r1{width:250px;height:250px}
+.hv-ring.r2{width:352px;height:352px;border:1px solid rgba(255,255,255,.16);animation-duration:70s;animation-direction:reverse}
+.hv-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+.hv-center .logo-xl{width:118px;height:140px;margin:0 auto;box-shadow:0 22px 44px rgba(0,0,0,.4)}
+.logo-xl span{font-size:31px;letter-spacing:1.5px;transform:translateY(-8px)}
+.hv-center .hv-caption{
+  display:block;margin-top:14px;font-size:11px;font-weight:800;letter-spacing:2.6px;
+  text-transform:uppercase;color:#c7d3f2;
+}
+.float-card{
+  position:absolute;width:252px;background:rgba(255,255,255,.97);color:var(--navy);
+  border:1px solid rgba(255,255,255,.7);border-radius:16px;padding:13px 15px;
+  box-shadow:0 22px 46px rgba(0,0,0,.38);animation:floaty 6.5s ease-in-out infinite;
+}
+.float-card .fc-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}
+.float-card .fc-title{font-weight:800;font-size:15px;letter-spacing:-.2px}
+.float-card .fc-meta{font-size:12.3px;color:var(--muted);font-weight:600}
+.float-card .fc-pill{
+  font-size:9.6px;font-weight:800;letter-spacing:.7px;text-transform:uppercase;
+  padding:4px 9px;border-radius:999px;background:#e6edff;color:#1a3fb8;white-space:nowrap;
+}
+.float-card .fc-pill.hot{background:var(--crimson);color:#fff}
+.float-card .fc-bar{height:6px;border-radius:999px;background:#eceae3;overflow:hidden;margin-top:9px}
+.float-card .fc-bar span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--crimson),#e8557c)}
+.fc-1{top:4%;left:0;animation-delay:0s}
+.fc-2{top:36%;right:-2%;animation-delay:.9s}
+.fc-3{bottom:3%;left:9%;animation-delay:.45s}
+
+/* --- Illustrated card header per category --- */
+.card-art{position:relative;height:116px;overflow:hidden;display:block}
+.card-art::before{
+  content:"";position:absolute;top:-46px;right:-34px;width:160px;height:160px;
+  border-radius:50%;background:rgba(255,255,255,.17);
+}
+.card-art::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(11,31,75,0) 38%,rgba(11,31,75,.5));
+}
+.art-pattern{
+  position:absolute;inset:0;opacity:.55;
+  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.16) 0 2px,transparent 2px 13px);
+}
+.art-glyph{
+  position:absolute;right:-12px;bottom:-24px;width:132px;height:132px;z-index:1;
+  fill:none;stroke:#fff;stroke-width:1.4;opacity:.4;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.art-badges{position:absolute;top:12px;left:12px;z-index:2;display:flex;gap:6px;flex-wrap:wrap;max-width:calc(100% - 24px)}
+.art-badges .badge{background:rgba(255,255,255,.95);box-shadow:0 3px 10px rgba(0,0,0,.22)}
+.art-badges .badge-today{background:var(--crimson);color:#fff}
+.art-badges .badge-closed{background:#2b2f3d;color:#fff}
+.art-Tech{background:linear-gradient(135deg,#2a52e8 0%,#0B1F4B 72%)}
+.art-Cultural{background:linear-gradient(135deg,#e8557c 0%,#8d0e2e 72%)}
+.art-Sports{background:linear-gradient(135deg,#16a46a 0%,#08402a 72%)}
+.art-Academic{background:linear-gradient(135deg,#f0a92c 0%,#8a4b00 72%)}
+.art-Global{background:linear-gradient(135deg,#1a93bf 0%,#07394b 72%)}
+.art-Career{background:linear-gradient(135deg,#7a4bf0 0%,#2c1370 72%)}
+.foot-note{font-size:12.5px;font-weight:700;color:var(--muted);letter-spacing:.2px}
+
+/* --- Category chip counters --- */
+.chip-n{
+  display:inline-block;margin-left:7px;padding:1px 8px;border-radius:999px;font-size:11.4px;
+  background:rgba(11,31,75,.1);color:var(--navy);font-weight:800;
+}
+.chip.active .chip-n{background:rgba(255,255,255,.24);color:#fff}
+
+/* --- Scroll reveal + section decoration --- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+.empty-art{display:block;margin:0 auto 14px;width:76px;height:76px;stroke:#b6b2a8;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tick{
+  width:66px;height:66px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;
+  background:#e9f9f0;border:2px solid #b2ebcd;color:var(--ok);font-size:33px;font-weight:800;
+  animation:pop .35s cubic-bezier(.2,.9,.3,1.4);
+}
+
+/* --- Back to top --- */
+.to-top{
+  position:fixed;left:20px;bottom:20px;z-index:90;width:46px;height:46px;border-radius:50%;
+  border:2px solid var(--crimson);background:var(--navy);color:#fff;font-size:19px;cursor:pointer;
+  box-shadow:var(--shadow-lg);transition:.2s;display:grid;place-items:center;
+}
+.to-top:hover{background:var(--crimson);transform:translateY(-3px)}
+@media (max-width:620px){.to-top{left:12px;bottom:78px}}
+
+
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes slidein{from{opacity:0;transform:translateX(30px)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(179,18,58,.55)}50%{box-shadow:0 0 0 6px rgba(179,18,58,0)}}
+
+/* ---------- Responsive ---------- */
+@media (max-width:860px){
+  .form-grid{grid-template-columns:1fr}
+  .hero{padding:62px 0 56px}
+  section{padding:58px 0}
+}
+@media (max-width:620px){
+  .header-inner{gap:10px}
+  .nav{width:100%;justify-content:flex-start;overflow-x:auto;padding-bottom:2px}
+  .meta{grid-template-columns:1fr}
+  .panel{padding:20px}
+  .card{padding:18px}
+  .toasts{left:12px;right:12px;max-width:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none !important;transition:none !important}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#top">
+      <span class="logo" aria-hidden="true"><span>PCU</span></span>
+      <span>
+        <span class="brand-name">PCU Campus Event Hub</span>
+        <span class="brand-sub">Learn | Grow | Achieve</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#events">Events</a>
+      <a href="#register">Register</a>
+      <a href="#my-registrations">My Registrations</a>
+      <a href="#about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="container hero-inner">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="hero-eyebrow">PCET's Pimpri Chinchwad University &middot; Pune</span>
+          <h1 id="heroTitle">Discover. Participate. Grow.</h1>
+          <p class="hero-tagline">Learn | Grow | Achieve</p>
+          <p class="hero-lead">Every hackathon, festival, talk and match on our 10-acre campus — discover what is on, then save your seat in under a minute.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#events">Browse Events <span aria-hidden="true">→</span></a>
+            <a class="btn btn-light" href="#register">Registration Form</a>
+          </div>
+          <div class="stats">
+            <span class="stat"><b>9+</b> Events</span>
+            <span class="stat">Open to all schools</span>
+            <span class="stat">Free registration</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <span class="hv-blob b1"></span>
+          <span class="hv-blob b2"></span>
+          <span class="hv-ring r2"></span>
+          <span class="hv-ring r1"></span>
+          <div class="hv-center">
+            <span class="logo logo-xl"><span>PCU</span></span>
+            <span class="hv-caption">10-acre campus · Pune</span>
+          </div>
+          <div class="float-card fc-1">
+            <div class="fc-row"><span class="fc-title">Prompt Arena</span><span class="fc-pill hot">Today</span></div>
+            <div class="fc-meta">9:30 AM · C Building 201</div>
+            <div class="fc-bar"><span style="width:74%"></span></div>
+          </div>
+          <div class="float-card fc-2">
+            <div class="fc-row"><span class="fc-title">Anantam 2027</span><span class="fc-pill">Cultural</span></div>
+            <div class="fc-meta">16 Jan 2027 · PCU Auditorium</div>
+            <div class="fc-bar"><span style="width:46%"></span></div>
+          </div>
+          <div class="float-card fc-3">
+            <div class="fc-row"><span class="fc-title">Kridarambh 2027</span><span class="fc-pill">Sports</span></div>
+            <div class="fc-meta">5 Feb 2027 · Main Ground</div>
+            <div class="fc-bar"><span style="width:63%"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EVENTS ================= -->
+  <section id="events" aria-labelledby="eventsTitle">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Events</span>
+        <h2 id="eventsTitle">What's happening on campus</h2>
+        <p>Search by title, filter by category, and register. Events that have already ended are greyed out — upcoming events always sort first.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="search">
+          <label class="sr-only" for="searchInput">Search events by title or category</label>
+          <input id="searchInput" type="search" placeholder="Search by title or category…" autocomplete="off" />
+        </div>
+        <div class="chips" id="categoryChips" role="group" aria-label="Filter events by category"></div>
+      </div>
+      <p class="result-count" id="resultCount" aria-live="polite"></p>
+
+      <div class="grid" id="eventGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= REGISTER ================= -->
+  <section id="register" class="alt" aria-labelledby="registerTitle">
+    <div class="container narrow">
+      <div class="section-head center">
+        <span class="eyebrow">Register</span>
+        <h2 id="registerTitle">Save your seat</h2>
+        <p>Fill the form below, or hit <strong>Register</strong> on any card to open it with the event already selected. Your entries stay in this browser.</p>
+      </div>
+      <div id="sectionSlot"></div>
+    </div>
+  </section>
+
+  <!-- ================= MY REGISTRATIONS ================= -->
+  <section id="my-registrations" aria-labelledby="regsTitle">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">My Registrations</span>
+        <h2 id="regsTitle">Your saved seats <span class="count-pill" id="regsCount" hidden>0</span></h2>
+        <p>Cancelling a registration frees your seat again. Everything here survives a page refresh.</p>
+      </div>
+
+      <div class="empty-state" id="regsEmpty">
+        <svg class="empty-art" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="16" rx="3"></rect>
+          <path d="M3 10h18M8 3v4M16 3v4"></path>
+          <path d="M9 15.5l2 2 4-4"></path>
+        </svg>
+        <h3>No registrations yet</h3>
+        <p>You have not registered for any event. Pick one from the Events section and your booking will appear here.</p>
+        <a class="btn btn-outline" href="#events">Browse Events</a>
+      </div>
+
+      <div class="table-wrap" id="regsWrap" hidden>
+        <table>
+          <caption class="sr-only">Your event registrations</caption>
+          <thead>
+            <tr>
+              <th scope="col">Registration ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Event</th>
+              <th scope="col">Date</th>
+              <th scope="col">Programme</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="regsBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="alt" aria-labelledby="aboutTitle">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">About</span>
+        <h2 id="aboutTitle">About PCU</h2>
+      </div>
+      <div class="about-card">
+        <p>PCET's Pimpri Chinchwad University (PCU), Pune is a state university established under the Govt. of Maharashtra Act No. V of 2023 and run by the Pimpri Chinchwad Education Trust (PCET).</p>
+        <p>Its 10-acre campus in the Pune Metropolitan Area brings together schools offering BA, BBA, BCA, B.Tech, B.Des, B.Sc, B.Pharm and MBA programmes under one roof.</p>
+        <p>The Campus Event Hub puts every cultural, technical, sports, academic and career event on a single page so students can discover it and register in seconds.</p>
+        <p class="contact">Contact: <a href="mailto:info@pcu.edu.in">info@pcu.edu.in</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <strong>PCU Campus Event Hub - Student prototype</strong>
+    <span class="note">Events modelled on real PCU events; dates, seats and venues are fictional for this demo.</span>
+  </div>
+</footer>
+
+<!-- ================= REGISTRATION FORM (moves between section and modal) ================= -->
+<div id="formWrap" class="panel">
+  <form id="regForm" novalidate>
+    <div class="form-grid">
+      <div class="field">
+        <label for="f-name">Full Name <span class="req">*</span></label>
+        <input id="f-name" name="name" type="text" autocomplete="name" placeholder="e.g. Aarav Deshmukh" />
+        <p class="err-msg" id="e-name"></p>
+      </div>
+      <div class="field">
+        <label for="f-email">PCU Email <span class="req">*</span></label>
+        <input id="f-email" name="email" type="email" autocomplete="email" placeholder="name@pcu.edu.in" />
+        <p class="err-msg" id="e-email"></p>
+      </div>
+      <div class="field">
+        <label for="f-prn">PRN Number <span class="req">*</span></label>
+        <input id="f-prn" name="prn" type="text" autocomplete="off" placeholder="e.g. PCU20240045" />
+        <p class="err-msg" id="e-prn"></p>
+      </div>
+      <div class="field">
+        <label for="f-programme">Programme <span class="req">*</span></label>
+        <select id="f-programme" name="programme">
+          <option value="">Select programme…</option>
+          <option>BA</option>
+          <option>BBA</option>
+          <option>BCA</option>
+          <option>B.Tech</option>
+          <option>B.Des</option>
+          <option>B.Sc</option>
+          <option>B.Pharm</option>
+          <option>MBA</option>
+        </select>
+        <p class="err-msg" id="e-programme"></p>
+      </div>
+      <div class="field">
+        <label for="f-year">Year <span class="req">*</span></label>
+        <select id="f-year" name="year">
+          <option value="">Select year…</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        <p class="err-msg" id="e-year"></p>
+      </div>
+      <div class="field">
+        <label for="f-event">Event <span class="req">*</span></label>
+        <select id="f-event" name="event">
+          <option value="">Select event…</option>
+        </select>
+        <p class="err-msg" id="e-event"></p>
+      </div>
+      <div class="field">
+        <label for="f-phone">Phone <span class="req">*</span></label>
+        <input id="f-phone" name="phone" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel"
+               placeholder="10-digit number" />
+        <p class="err-msg" id="e-phone"></p>
+      </div>
+      <div class="field full" id="f-team-wrap" hidden>
+        <label for="f-team">Team name <span style="color:var(--muted);font-weight:600">(optional — Tech events)</span></label>
+        <input id="f-team" name="team" type="text" placeholder="e.g. Prompt Pirates" />
+        <p class="err-msg" id="e-team"></p>
+      </div>
+    </div>
+
+    <div class="form-actions split">
+      <button class="btn btn-primary" type="submit">Confirm Registration</button>
+      <span style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn-outline btn-sm" type="button" id="clearBtn">Clear form</button>
+        <button class="btn btn-outline btn-sm" type="button" id="modalCancelBtn" hidden>Close</button>
+      </span>
+    </div>
+    <p class="hint">Fields marked <span class="req">*</span> are required. Duplicate registrations for the same email + event are blocked, and seats are released again if you cancel.</p>
+  </form>
+
+  <div class="confirm" id="confirmPanel" hidden>
+    <div class="tick" aria-hidden="true">✓</div>
+    <h3 id="confirmTitle" tabindex="-1">You're registered!</h3>
+    <div class="id" id="c-id">PCU-2026-0000</div>
+    <p style="margin:0;color:var(--muted);font-size:14.5px">Save this ID — it is your entry pass at the venue.</p>
+    <dl>
+      <dt>Student</dt><dd id="c-name">—</dd>
+      <dt>Event</dt><dd id="c-event">—</dd>
+      <dt>Date</dt><dd id="c-date">—</dd>
+      <dt>Programme</dt><dd id="c-programme">—</dd>
+    </dl>
+    <div class="form-actions">
+      <button class="btn btn-primary" type="button" id="againBtn">Register for another event</button>
+      <button class="btn btn-outline" type="button" id="viewRegsBtn">View My Registrations</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL ================= -->
+<div class="modal-overlay" id="modal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <h3 id="modalTitle">Register for an event</h3>
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close registration dialog">&times;</button>
+    </div>
+    <div class="modal-body" id="modalSlot"></div>
+  </div>
+</div>
+
+<!-- ================= BACK TO TOP ================= -->
+<button class="to-top" id="toTop" type="button" aria-label="Back to top" hidden>↑</button>
+
+<!-- ================= TOASTS ================= -->
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+<script>
+/* ==========================================================================
+   PCU CAMPUS EVENT HUB — vanilla JS, no dependencies
+   Blocks: DATA · STORAGE · STATE/HELPERS · RENDER · VALIDATION · HANDLERS
+   ========================================================================== */
+
+/* =========================== DATA =========================== */
+
+/* "Today" for all past / upcoming decisions — from new Date() */
+var TODAY = new Date();
+var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+var EVENTS = [
+  {
+    id:"prompt-arena",
+    title:"Prompt Arena",
+    category:"Tech",
+    date:"2026-10-26",
+    time:"09:30",
+    venue:"C Building 201",
+    organizer:"SOET, Dept. of Computer Science & Engineering",
+    description:"Think, Prompt, Build, Compete. Three rounds — Visual Prompt Relay, Prompt Fixer and Prompt to Product — take your idea from a blank box to a working concept.",
+    seats:60
+  },
+  {
+    id:"alumni-interaction",
+    title:"Alumni Interaction Session",
+    category:"Career",
+    date:"2026-10-09",
+    time:"11:30",
+    venue:"PCU Auditorium",
+    organizer:"PCU Alumni Cell",
+    description:"Current students meet accomplished PCU alumni who walk through their journeys, their pivots, and the practical advice they wish they had before placements.",
+    seats:150
+  },
+  {
+    id:"acm-tech-talk",
+    title:"ACM Student Chapter Tech Talk",
+    category:"Tech",
+    date:"2026-10-17",
+    time:"15:00",
+    venue:"C Building 105",
+    organizer:"PCU ACM Student Chapter",
+    description:"The PCU ACM Student Chapter hosts a talk on how modern software teams ship AI-assisted products, followed by an open Q&A with the speaker.",
+    seats:90
+  },
+  {
+    id:"discover-japan",
+    title:"Discover Japan",
+    category:"Global",
+    date:"2026-10-22",
+    time:"14:00",
+    venue:"Seminar Hall B",
+    organizer:"PCU International Relations Cell",
+    description:"A session on global careers and exchange opportunities in Japan, covering language prep, scholarships and daily life on a Japanese campus.",
+    seats:80
+  },
+  {
+    id:"nipm-hr-meet",
+    title:"NIPM Student Chapter HR Meet",
+    category:"Career",
+    date:"2026-11-14",
+    time:"16:00",
+    venue:"MBA Seminar Room",
+    organizer:"PCU NIPM Student Chapter",
+    description:"HR professionals from Pune's industry network share candid guidance on resumes, interviews and surviving the first year at work.",
+    seats:70
+  },
+  {
+    id:"samsung-innovation-campus",
+    title:"Samsung Innovation Campus Expert Session",
+    category:"Academic",
+    date:"2026-11-28",
+    time:"10:30",
+    venue:"SOET Innovation Lab",
+    organizer:"School of Engineering & Technology (SOET)",
+    description:"An industry-academia talk with an industry leader on connected devices, applied research and the skills campuses should be teaching next.",
+    seats:100
+  },
+  {
+    id:"explore-germany",
+    title:"PCU Explore Germany",
+    category:"Global",
+    date:"2026-12-12",
+    time:"11:00",
+    venue:"Seminar Hall A",
+    organizer:"PCU International Relations Cell",
+    description:"A celebration of German culture with language tasters, student mobility routes and a clear look at study and career opportunities in Germany.",
+    seats:80
+  },
+  {
+    id:"anantam-2027",
+    title:"Anantam 2027",
+    category:"Cultural",
+    date:"2027-01-16",
+    time:"10:00",
+    venue:"PCU Auditorium & Open Air Theatre",
+    organizer:"PCU Cultural Committee",
+    description:"The annual two-day cultural festival of music, dance, drama and art, where every school competes for the overall championship trophy.",
+    seats:400
+  },
+  {
+    id:"kridarambh-2027",
+    title:"Kridarambh 2027",
+    category:"Sports",
+    date:"2027-02-05",
+    time:"08:00",
+    venue:"Main Ground",
+    organizer:"Dept. of Physical Education",
+    description:"The annual three-day sports festival with inter-school competitions, from track events to floodlit team finals on the main ground.",
+    seats:300
+  }
+];
+
+var CATEGORIES = ["All","Tech","Cultural","Sports","Academic","Global","Career"];
+
+/* Inline SVG glyphs used as the card artwork — keeps the file 100% self-contained */
+var ART_ICONS = {
+  Tech:'<svg class="art-glyph" viewBox="0 0 24 24" aria-hidden="true">' +
+       '<rect x="7" y="7" width="10" height="10" rx="2"/><rect x="10" y="10" width="4" height="4" rx="1"/>' +
+       '<path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M5.4 5.4l1.8 1.8M16.8 16.8l1.8 1.8M18.6 5.4l-1.8 1.8M7.2 16.8l-1.8 1.8"/></svg>',
+  Cultural:'<svg class="art-glyph" viewBox="0 0 24 24" aria-hidden="true">' +
+       '<path d="M9 17.5V5l11-2v12.5"/><circle cx="6.5" cy="17.5" r="2.6"/>' +
+       '<circle cx="17.5" cy="15.5" r="2.6"/><path d="M9 8.6l11-2"/></svg>',
+  Sports:'<svg class="art-glyph" viewBox="0 0 24 24" aria-hidden="true">' +
+       '<path d="M8 4h8v6a4 4 0 0 1-8 0z"/><path d="M8 5H4.5v1.5A3.5 3.5 0 0 0 8 10"/>' +
+       '<path d="M16 5h3.5v1.5A3.5 3.5 0 0 1 16 10"/><path d="M12 14v3"/>' +
+       '<path d="M9.6 17h4.8l-.7 3.4h-3.4z"/><path d="M8 21.4h8"/></svg>',
+  Academic:'<svg class="art-glyph" viewBox="0 0 24 24" aria-hidden="true">' +
+       '<path d="M2.5 8.5L12 4l9.5 4.5L12 13z"/><path d="M6.5 10.6V15c0 1.7 2.5 3 5.5 3s5.5-1.3 5.5-3v-4.4"/>' +
+       '<path d="M20.5 9v5.4"/><path d="M21.6 20.6l-4.2-1.4-4.2 1.4-4.2-1.4-4.2 1.4"/></svg>',
+  Global:'<svg class="art-glyph" viewBox="0 0 24 24" aria-hidden="true">' +
+       '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/>' +
+       '<path d="M12 3c2.6 2.7 3.9 5.7 3.9 9S14.6 18.3 12 21c-2.6-2.7-3.9-5.7-3.9-9S9.4 5.7 12 3z"/></svg>',
+  Career:'<svg class="art-glyph" viewBox="0 0 24 24" aria-hidden="true">' +
+       '<rect x="3" y="7.5" width="18" height="12.5" rx="2.5"/>' +
+       '<path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5"/>' +
+       '<path d="M3 12.6h18"/><path d="M11 12.6v2h2v-2"/></svg>'
+};
+
+/* Scroll-reveal is progressive enhancement: without IntersectionObserver nothing is hidden */
+var canReveal = typeof window.IntersectionObserver === "function";
+var revealObserver = null;
+
+/* Empty-search illustration (magnifier) */
+var ART_EMPTY = '<svg class="empty-art" viewBox="0 0 24 24" aria-hidden="true">' +
+  '<circle cx="11" cy="11" r="7"/><path d="M16.2 16.2L21 21"/><path d="M8.4 11h5.2"/></svg>';
+
+/* =========================== STORAGE ===========================
+   Everything is saved in localStorage and reloaded on refresh.   */
+
+var STORE = {
+  regs:"pcu_regs_v1",
+  seats:"pcu_seats_v1",
+  seq:"pcu_seq_v1"
+};
+
+function readJSON(key, fallback){
+  try{
+    var raw = window.localStorage.getItem(key);
+    return raw ? JSON.parse(raw) : fallback;
+  }catch(err){
+    return fallback; /* storage blocked (private mode / file://) — run in memory */
+  }
+}
+function writeJSON(key, value){
+  try{
+    window.localStorage.setItem(key, JSON.stringify(value));
+    return true;
+  }catch(err){
+    return false; /* silently keep working for this session */
+  }
+}
+
+/* =========================== STATE / HELPERS =========================== */
+
+var state = {
+  query:"",
+  category:"All",
+  regs:[],
+  seats:{},
+  seq:0,
+  touched:{}
+};
+
+function $(sel){ return document.querySelector(sel); }
+
+function loadState(){
+  state.regs  = readJSON(STORE.regs, []);
+  state.seats = readJSON(STORE.seats, {});
+  state.seq   = readJSON(STORE.seq, 0);
+  if(!Array.isArray(state.regs)) state.regs = [];
+  /* drop anything pointing at an event that no longer exists */
+  state.regs = state.regs.filter(function(r){ return r && r.eventId && eventById(r.eventId); });
+}
+function saveAll(){
+  writeJSON(STORE.regs, state.regs);
+  writeJSON(STORE.seats, state.seats);
+  writeJSON(STORE.seq, state.seq);
+}
+
+function eventById(id){
+  for(var i=0;i<EVENTS.length;i++){ if(EVENTS[i].id === id) return EVENTS[i]; }
+  return null;
+}
+
+function evParts(ev){
+  var d = ev.date.split("-").map(Number);
+  var t = ev.time.split(":").map(Number);
+  return { y:d[0], m:d[1], d:d[2], hh:t[0], mm:t[1] };
+}
+function startOfToday(){
+  return new Date(TODAY.getFullYear(), TODAY.getMonth(), TODAY.getDate());
+}
+function eventDay(ev){
+  var p = evParts(ev);
+  return new Date(p.y, p.m - 1, p.d);
+}
+function isPast(ev){ return eventDay(ev) < startOfToday(); }
+function isToday(ev){
+  var p = evParts(ev);
+  return p.y === TODAY.getFullYear() && p.m === (TODAY.getMonth() + 1) && p.d === TODAY.getDate();
+}
+function formatDate(ev){
+  var p = evParts(ev);
+  return p.d + " " + MONTHS[p.m - 1] + " " + p.y;
+}
+function formatTime(ev){
+  var p = evParts(ev);
+  var ampm = p.hh >= 12 ? "PM" : "AM";
+  var h12 = p.hh % 12; if(h12 === 0) h12 = 12;
+  return h12 + ":" + (p.mm < 10 ? "0" + p.mm : p.mm) + " " + ampm;
+}
+function eventMoment(ev){
+  var p = evParts(ev);
+  return new Date(p.y, p.m - 1, p.d, p.hh, p.mm).getTime();
+}
+function seatsLeft(id){
+  var ev = eventById(id);
+  if(!ev) return 0;
+  if(Object.prototype.hasOwnProperty.call(state.seats, id)) return state.seats[id];
+  return ev.seats;
+}
+function esc(str){
+  return String(str == null ? "" : str)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+}
+/* upcoming first (by date), then past events below, most recent past first */
+function sortEvents(a, b){
+  var pa = isPast(a), pb = isPast(b);
+  if(pa !== pb) return pa ? 1 : -1;
+  return pa ? eventMoment(b) - eventMoment(a) : eventMoment(a) - eventMoment(b);
+}
+
+/* =========================== TOASTS =========================== */
+
+function toast(message, type){
+  var box = document.getElementById("toasts");
+  if(!box) return;
+  var el = document.createElement("div");
+  el.className = "toast " + (type || "info");
+  el.textContent = message;
+  box.appendChild(el);
+  window.setTimeout(function(){
+    el.classList.add("out");
+    window.setTimeout(function(){ if(el.parentNode) el.parentNode.removeChild(el); }, 400);
+  }, 3600);
+}
+
+/* =========================== RENDER =========================== */
+
+function renderChips(){
+  var box = document.getElementById("categoryChips");
+  box.innerHTML = CATEGORIES.map(function(cat){
+    var count = cat === "All" ? EVENTS.length : EVENTS.filter(function(e){ return e.category === cat; }).length;
+    var active = state.category === cat ? " active" : "";
+    return '<button type="button" class="chip' + active + '" data-cat="' + cat + '"' +
+           ' aria-pressed="' + (state.category === cat ? "true" : "false") + '">' + cat +
+           '<span class="chip-n">' + count + '</span></button>';
+  }).join("");
+}
+
+function cardHTML(ev){
+  var past = isPast(ev);
+  var today = isToday(ev) && !past;
+  var left = seatsLeft(ev.id);
+  var full = left <= 0;
+  var pct = Math.max(0, Math.min(100, Math.round((left / ev.seats) * 100)));
+
+  var action;
+  if(past){
+    action = '<button class="btn btn-ghost btn-sm" type="button" disabled>Event Closed</button>';
+  }else if(full){
+    action = '<button class="btn btn-ghost btn-sm" type="button" disabled>Seats Full</button>';
+  }else{
+    action = '<button class="btn btn-primary btn-sm" type="button" data-register="' + ev.id + '">Register</button>';
+  }
+
+  var badges = '<span class="badge cat-' + ev.category + '">' + ev.category + '</span>';
+  if(today) badges += '<span class="badge badge-today">Happening Today</span>';
+  if(past)  badges += '<span class="badge badge-closed">Event Closed</span>';
+
+  return '' +
+  '<article class="card' + (past ? " is-past" : "") + (canReveal ? " reveal" : "") + '">' +
+    '<div class="card-art art-' + ev.category + '">' +
+      '<span class="art-pattern"></span>' +
+      (ART_ICONS[ev.category] || "") +
+      '<div class="art-badges">' + badges + '</div>' +
+    '</div>' +
+    '<div class="card-body">' +
+      '<h3>' + esc(ev.title) + '</h3>' +
+      '<p class="desc">' + esc(ev.description) + '</p>' +
+      '<dl class="meta">' +
+        '<div><dt>Date</dt><dd>' + formatDate(ev) + '</dd></div>' +
+        '<div><dt>Time</dt><dd>' + formatTime(ev) + '</dd></div>' +
+        '<div><dt>Venue</dt><dd>' + esc(ev.venue) + '</dd></div>' +
+        '<div class="wide"><dt>Organizer</dt><dd>' + esc(ev.organizer) + '</dd></div>' +
+      '</dl>' +
+      '<div class="seats">' +
+        '<div class="seats-bar' + (full ? " full" : "") + '"><span style="width:' + pct + '%"></span></div>' +
+        '<span class="seats-text"><b>' + left + '</b> of ' + ev.seats + ' seats left' +
+          (past ? ' · registrations closed' : '') + '</span>' +
+      '</div>' +
+      '<div class="card-foot">' +
+        '<span class="foot-note">' + (past ? "Ended" : (full ? "Seats full" : "Free entry")) + '</span>' +
+        action +
+      '</div>' +
+    '</div>' +
+  '</article>';
+}
+
+function renderEvents(){
+  var grid = document.getElementById("eventGrid");
+  var q = state.query.trim().toLowerCase();
+  var list = EVENTS.filter(function(ev){
+    var matchesQuery = !q ||
+      ev.title.toLowerCase().indexOf(q) > -1 ||
+      ev.category.toLowerCase().indexOf(q) > -1 ||
+      ev.organizer.toLowerCase().indexOf(q) > -1;
+    var matchesCat = state.category === "All" || ev.category === state.category;
+    return matchesQuery && matchesCat;
+  }).sort(sortEvents);
+
+  var upcomingCount = list.filter(function(ev){ return !isPast(ev); }).length;
+  document.getElementById("resultCount").textContent =
+    "Showing " + list.length + " of " + EVENTS.length + " events · " +
+    upcomingCount + " upcoming · sorted by date, upcoming first";
+
+  if(!list.length){
+    grid.innerHTML =
+      '<div class="empty-state">' + ART_EMPTY + '<h3>No events found</h3>' +
+      '<p>Nothing matches “' + esc(state.query) + '” in ' + esc(state.category) +
+      '. Try another keyword or clear the category filter.</p>' +
+      '<button class="btn btn-outline btn-sm" type="button" data-clear-filters>Clear search &amp; filters</button></div>';
+    return;
+  }
+  grid.innerHTML = list.map(cardHTML).join("");
+  observeReveals(grid);
+}
+
+/* Staggered scroll-reveal for freshly rendered cards */
+function observeReveals(root){
+  if(!revealObserver || !root) return;
+  var els = root.querySelectorAll(".reveal:not(.in)");
+  Array.prototype.forEach.call(els, function(el, i){
+    el.style.transitionDelay = Math.min(i, 8) * 45 + "ms";
+    revealObserver.observe(el);
+  });
+}
+
+function renderRegistrations(){
+  var body = document.getElementById("regsBody");
+  var wrap = document.getElementById("regsWrap");
+  var empty = document.getElementById("regsEmpty");
+  var pill = document.getElementById("regsCount");
+
+  var regs = state.regs.slice().sort(function(a, b){
+    return (b.createdAt || 0) - (a.createdAt || 0);
+  });
+
+  pill.hidden = regs.length === 0;
+  pill.textContent = regs.length + (regs.length === 1 ? " saved" : " saved");
+
+  if(!regs.length){
+    wrap.hidden = true;
+    empty.hidden = false;
+    body.innerHTML = "";
+    return;
+  }
+  empty.hidden = true;
+  wrap.hidden = false;
+  body.innerHTML = regs.map(function(r){
+    var ev = eventById(r.eventId);
+    return '<tr>' +
+      '<td><span class="mono">' + esc(r.id) + '</span></td>' +
+      '<td>' + esc(r.name) + '<span class="sub">' + esc(r.email) + '</span></td>' +
+      '<td>' + esc(ev ? ev.title : r.eventTitle) + '<span class="sub">' + (ev ? ev.category : "") + '</span></td>' +
+      '<td>' + (ev ? formatDate(ev) : "—") + '<span class="sub">' + (ev ? formatTime(ev) : "") + '</span></td>' +
+      '<td>' + esc(r.programme) + '<span class="sub">Year ' + esc(r.year) + ' · PRN ' + esc(r.prn) + '</span></td>' +
+      '<td><button class="btn btn-danger-ghost btn-sm" type="button" data-cancel="' + esc(r.id) + '">Cancel</button></td>' +
+    '</tr>';
+  }).join("");
+}
+
+/* Populate the Event dropdown: upcoming events with free seats only */
+function populateEventSelect(){
+  var sel = document.getElementById("f-event");
+  var current = sel.value;
+  var options = EVENTS.filter(function(ev){ return !isPast(ev) && seatsLeft(ev.id) > 0; })
+    .sort(sortEvents)
+    .map(function(ev){
+      return '<option value="' + ev.id + '">' + esc(ev.title) + ' — ' + formatDate(ev) +
+             ' (' + ev.category + ')</option>';
+    }).join("");
+  sel.innerHTML = '<option value="">Select event…</option>' + options;
+  if(current && sel.querySelector('option[value="' + current + '"]')) sel.value = current;
+}
+
+function renderAll(){
+  renderEvents();
+  renderRegistrations();
+  populateEventSelect();
+}
+
+/* =========================== VALIDATION =========================== */
+
+var FIELDS = ["name","email","prn","programme","year","event","phone","team"];
+
+var validators = {
+  name:function(v){ return v.trim().length >= 2 ? "" : "Please enter your full name."; },
+  email:function(v){
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? "" : "Enter a valid email address (e.g. name@pcu.edu.in).";
+  },
+  prn:function(v){ return v.trim().length >= 4 ? "" : "Enter your PRN number (at least 4 characters)."; },
+  programme:function(v){ return v ? "" : "Select your programme."; },
+  year:function(v){ return v ? "" : "Select your year (1 to 4)."; },
+  event:function(v){ return v ? "" : "Select an event."; },
+  phone:function(v){
+    return /^\d{10}$/.test(v.trim()) ? "" : "Phone must be exactly 10 digits.";
+  },
+  team:function(){ return ""; } /* optional field */
+};
+
+/* Validates a field. Pass force=true to reveal its error (submit / blur). */
+function validateField(name, force){
+  var el = document.getElementById("f-" + name);
+  var errEl = document.getElementById("e-" + name);
+  if(!el || !errEl) return "";
+  if(force) state.touched[name] = true;
+
+  var msg = validators[name] ? validators[name](el.value) : "";
+  var show = !!msg && !!state.touched[name];
+
+  errEl.textContent = show ? msg : "";
+  el.classList.toggle("invalid", show);
+  el.setAttribute("aria-invalid", show ? "true" : "false");
+  if(show) el.setAttribute("aria-describedby", "e-" + name);
+  else el.removeAttribute("aria-describedby");
+  return msg;
+}
+function clearErrors(){
+  state.touched = {};
+  FIELDS.forEach(function(name){
+    var el = document.getElementById("f-" + name);
+    var errEl = document.getElementById("e-" + name);
+    if(el){ el.classList.remove("invalid"); el.removeAttribute("aria-invalid"); el.removeAttribute("aria-describedby"); }
+    if(errEl) errEl.textContent = "";
+  });
+}
+function resetForm(){
+  document.getElementById("regForm").reset();
+  clearErrors();
+  document.getElementById("f-team-wrap").hidden = true;
+  document.getElementById("confirmPanel").hidden = true;
+  document.getElementById("regForm").hidden = false;
+}
+
+/* Team name field only exists for Tech events */
+function syncTeamField(){
+  var ev = eventById(document.getElementById("f-event").value);
+  var show = !!ev && ev.category === "Tech";
+  document.getElementById("f-team-wrap").hidden = !show;
+  if(!show){
+    document.getElementById("f-team").value = "";
+    document.getElementById("e-team").textContent = "";
+  }
+}
+
+/* =========================== MODAL =========================== */
+
+var lastFocused = null;
+
+function placeForm(where){
+  var wrap = document.getElementById("formWrap");
+  var slot = where === "modal" ? document.getElementById("modalSlot") : document.getElementById("sectionSlot");
+  if(wrap.parentNode !== slot) slot.appendChild(wrap);
+}
+
+function openModal(eventId){
+  lastFocused = document.activeElement;
+  resetForm();
+  placeForm("modal");
+  document.getElementById("formWrap").classList.add("in");   /* never hide the form in the dialog */
+  if(eventId){
+    var ev = eventById(eventId);
+    document.getElementById("f-event").value = eventId;
+    syncTeamField();
+    document.getElementById("modalTitle").textContent = "Register for " + (ev ? ev.title : "an event");
+  }else{
+    document.getElementById("modalTitle").textContent = "Register for an event";
+  }
+  document.getElementById("modalCancelBtn").hidden = false;
+  document.getElementById("modal").hidden = false;
+  document.body.style.overflow = "hidden";
+  window.setTimeout(function(){
+    var first = document.getElementById("f-name");
+    if(first) first.focus();
+  }, 60);
+}
+
+function closeModal(){
+  document.getElementById("modal").hidden = true;
+  document.body.style.overflow = "";
+  placeForm("section");
+  if(lastFocused && document.contains(lastFocused)) lastFocused.focus();
+  lastFocused = null;
+}
+
+/* =========================== SUCCESS / CLEANUP =========================== */
+
+function showConfirmation(reg){
+  var ev = eventById(reg.eventId);
+  document.getElementById("c-id").textContent = reg.id;
+  document.getElementById("c-name").textContent = reg.name + " · " + reg.prn;
+  document.getElementById("c-event").textContent = ev ? ev.title : reg.eventTitle;
+  document.getElementById("c-date").textContent = ev ? (formatDate(ev) + ", " + formatTime(ev)) : "—";
+  document.getElementById("c-programme").textContent = reg.programme + " · Year " + reg.year;
+  document.getElementById("regForm").hidden = true;
+  document.getElementById("confirmPanel").hidden = false;
+  document.getElementById("confirmTitle").focus();
+}
+
+function backToForm(){
+  resetForm();
+  document.getElementById("f-name").focus();
+}
+
+/* =========================== EVENT HANDLERS =========================== */
+
+function handleSubmit(e){
+  e.preventDefault();
+
+  var required = ["name","email","prn","programme","year","event","phone"];
+  var firstBad = null;
+  required.forEach(function(name){
+    var msg = validateField(name, true);
+    if(msg && !firstBad) firstBad = name;
+  });
+  if(firstBad){
+    document.getElementById("f-" + firstBad).focus();
+    toast("Please fix the highlighted fields.", "error");
+    return;
+  }
+
+  var eventId = document.getElementById("f-event").value;
+  var ev = eventById(eventId);
+  if(!ev){
+    validateField("event", true);
+    toast("Please select an event.", "error");
+    return;
+  }
+  if(isPast(ev)){
+    toast("That event has already ended.", "error");
+    populateEventSelect();
+    return;
+  }
+  if(seatsLeft(eventId) <= 0){
+    toast("Seats for “" + ev.title + "” are full.", "error");
+    renderAll();
+    return;
+  }
+
+  var email = document.getElementById("f-email").value.trim().toLowerCase();
+  var duplicate = state.regs.some(function(r){
+    return r.eventId === eventId && String(r.email).toLowerCase() === email;
+  });
+  if(duplicate){
+    state.touched.email = true;
+    validateField("email");
+    document.getElementById("f-email").classList.add("invalid");
+    document.getElementById("e-email").textContent = "You are already registered for this event with this email.";
+    document.getElementById("f-email").focus();
+    toast("Duplicate registration blocked — this email is already registered for that event.", "error");
+    return;
+  }
+
+  /* Build + save the registration */
+  state.seq += 1;
+  var reg = {
+    id:"PCU-" + TODAY.getFullYear() + "-" + String(state.seq).padStart(4, "0"),
+    name:document.getElementById("f-name").value.trim(),
+    email:document.getElementById("f-email").value.trim(),
+    prn:document.getElementById("f-prn").value.trim(),
+    programme:document.getElementById("f-programme").value,
+    year:document.getElementById("f-year").value,
+    phone:document.getElementById("f-phone").value.trim(),
+    teamName:document.getElementById("f-team").value.trim(),
+    eventId:eventId,
+    eventTitle:ev.title,
+    createdAt:Date.now()
+  };
+  state.regs.unshift(reg);
+  state.seats[eventId] = Math.max(0, seatsLeft(eventId) - 1);
+  saveAll();
+
+  renderAll();
+  showConfirmation(reg);
+  toast("Registered for " + ev.title + "! ID " + reg.id, "success");
+}
+
+function handleFieldEvent(e){
+  var el = e.target;
+  if(!el || !el.id || el.id.indexOf("f-") !== 0) return;
+  var name = el.id.slice(2);
+  if(FIELDS.indexOf(name) === -1) return;
+  if(state.touched[name]) validateField(name);   /* errors clear as the user types */
+}
+
+function handleFieldBlur(e){
+  var el = e.target;
+  if(!el || !el.id || el.id.indexOf("f-") !== 0) return;
+  var name = el.id.slice(2);
+  if(FIELDS.indexOf(name) === -1) return;
+  validateField(name, true);   /* reveal on leaving the field */
+}
+
+function handleFieldChange(e){
+  if(e.target && e.target.id === "f-event"){
+    syncTeamField();
+    validateField("event");
+  }
+  handleFieldEvent(e);
+}
+
+function cancelRegistration(id){
+  var idx = -1;
+  for(var i=0;i<state.regs.length;i++){ if(state.regs[i].id === id){ idx = i; break; } }
+  if(idx === -1){ toast("That registration could not be found.", "error"); return; }
+
+  var reg = state.regs[idx];
+  var ev = eventById(reg.eventId);
+  state.regs.splice(idx, 1);
+  if(ev) state.seats[reg.eventId] = seatsLeft(reg.eventId) + 1;   /* restore the seat */
+  saveAll();
+  renderAll();
+  toast("Registration " + reg.id + " cancelled — your seat is free again.", "success");
+}
+
+function wireEvents(){
+  /* --- search + category chips --- */
+  document.getElementById("searchInput").addEventListener("input", function(e){
+    state.query = e.target.value;
+    renderEvents();
+  });
+  document.getElementById("categoryChips").addEventListener("click", function(e){
+    var btn = e.target.closest("[data-cat]");
+    if(!btn) return;
+    state.category = btn.getAttribute("data-cat");
+    renderChips();
+    renderEvents();
+  });
+
+  /* --- Register buttons + empty-state action (delegated: grid re-renders) --- */
+  document.getElementById("eventGrid").addEventListener("click", function(e){
+    var clear = e.target.closest("[data-clear-filters]");
+    if(clear){
+      state.query = "";
+      state.category = "All";
+      document.getElementById("searchInput").value = "";
+      renderChips();
+      renderEvents();
+      document.getElementById("searchInput").focus();
+      return;
+    }
+    var btn = e.target.closest("[data-register]");
+    if(!btn) return;
+    openModal(btn.getAttribute("data-register"));
+  });
+
+  /* --- form --- */
+  document.getElementById("regForm").addEventListener("submit", handleSubmit);
+  document.getElementById("regForm").addEventListener("input", handleFieldEvent);
+  document.getElementById("regForm").addEventListener("change", handleFieldChange);
+  document.getElementById("regForm").addEventListener("focusout", handleFieldBlur);
+  document.getElementById("clearBtn").addEventListener("click", function(){
+    resetForm();
+    document.getElementById("f-name").focus();
+    toast("Form cleared.", "success");
+  });
+
+  /* --- confirmation panel --- */
+  document.getElementById("againBtn").addEventListener("click", backToForm);
+  document.getElementById("viewRegsBtn").addEventListener("click", function(){
+    if(!document.getElementById("modal").hidden) closeModal();
+    document.getElementById("my-registrations").scrollIntoView({behavior:"smooth", block:"start"});
+  });
+
+  /* --- modal --- */
+  document.getElementById("modalClose").addEventListener("click", closeModal);
+  document.getElementById("modalCancelBtn").addEventListener("click", closeModal);
+  document.getElementById("modal").addEventListener("mousedown", function(e){
+    if(e.target === e.currentTarget) closeModal();
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape" && !document.getElementById("modal").hidden) closeModal();
+  });
+  /* keep Tab inside the open modal */
+  document.getElementById("modal").addEventListener("keydown", function(e){
+    if(e.key !== "Tab") return;
+    var nodes = Array.prototype.slice.call(
+      e.currentTarget.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    ).filter(function(el){ return !el.disabled && el.offsetParent !== null; });
+    if(!nodes.length) return;
+    var first = nodes[0], last = nodes[nodes.length - 1];
+    if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  });
+
+  /* --- cancel registrations (delegated) --- */
+  document.getElementById("regsBody").addEventListener("click", function(e){
+    var btn = e.target.closest("[data-cancel]");
+    if(!btn) return;
+    cancelRegistration(btn.getAttribute("data-cancel"));
+  });
+}
+
+/* =========================== INIT =========================== */
+
+/* Scroll-reveal for section headings and panels */
+function initReveal(){
+  if(!canReveal) return;
+  revealObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      en.target.classList.add("in");
+      revealObserver.unobserve(en.target);
+    });
+  }, { threshold:0.1, rootMargin:"0px 0px -50px 0px" });
+
+  var statics = document.querySelectorAll(".section-head, .about-card, .panel, .table-wrap, .empty-state");
+  Array.prototype.forEach.call(statics, function(el){ el.classList.add("reveal"); });
+  observeReveals(document);
+}
+
+/* Highlights the nav link for the section currently on screen */
+function initNavSpy(){
+  if(!canReveal) return;
+  var links = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
+  var pairs = links.map(function(a){ return { link:a, section:document.querySelector(a.getAttribute("href")) }; })
+                   .filter(function(p){ return p.section; });
+  if(!pairs.length) return;
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      pairs.forEach(function(p){
+        p.link.classList.toggle("active", p.section === en.target);
+      });
+    });
+  }, { rootMargin:"-45% 0px -50% 0px" });
+  pairs.forEach(function(p){ spy.observe(p.section); });
+}
+
+/* Back-to-top button */
+function initToTop(){
+  var btn = document.getElementById("toTop");
+  var onScroll = function(){ btn.hidden = (window.pageYOffset || document.documentElement.scrollTop || 0) < 420; };
+  window.addEventListener("scroll", onScroll, { passive:true });
+  onScroll();
+  btn.addEventListener("click", function(){
+    try{ window.scrollTo({ top:0, behavior:"smooth" }); }
+    catch(err){ window.scrollTo(0, 0); }
+  });
+}
+
+function init(){
+  loadState();
+  renderChips();
+  renderAll();
+  placeForm("section");
+  wireEvents();
+  initReveal();
+  initNavSpy();
+  initToTop();
+}
+init();
+</script>
+</body>
+</html>
